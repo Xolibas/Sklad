@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Склад товарів</title>
+</head>
+<body>
+    <div>
+        <h3>Товари</h3>
+        <table>
+            <tr>
+                <td><p>Номер товару</p></td>
+                <td><p>Назва</p></td>
+                <td><p>Кількість</p></td>
+                <td><p>Власник</p></td>
+                <td><p>Ціна</p></td>
+                <td></td>
+            </tr>
+            @foreach (var t in ViewBag.Tovars)
+            {
+                <tr>
+                    <td><p>@t.Id</p></td>
+                    <td><p>@t.Name</p></td>
+                    <td><p>@t.Count</p></td>
+                    <td><p>@t.Vlas</p></td>
+                    <td><p>@t.Price</p></td>
+                    <td><p><a href="/Tovar/Tovar/@t.Id">Переглянути товар</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
+

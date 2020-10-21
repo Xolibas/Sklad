@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Товар" + ViewBag.ProductId;
+}
+@model Sklad.Models.Tovar
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Перегляд товару номер @ViewBag.ProductId</title>
+</head>
+<body>
+    <div>
+        <h3>@Html.DisplayFor(modelItem => Model.Name)</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.ProductId" name="TrainId" />
+            <table>
+                <tr>
+                    <td><p>Кількість: </p></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Count)
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Власник:</p></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Vlas)
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Ціна:</p></td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Price)
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
